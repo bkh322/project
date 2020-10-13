@@ -237,7 +237,7 @@
                 var bottom_of_object = $(this).offset().top + $(this).outerHeight();
                 var bottom_of_window = $(window).scrollTop() + $(window).height();
 
-            if( bottom_of_window > bottom_of_object/1 ){
+            if( bottom_of_window > bottom_of_object/1.5 ){
                 $('.notic li:nth-child(1)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '.5s'});
                 $('.notic li:nth-child(2)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '1s'});
                 $('.notic li:nth-child(3)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '1.5s'});
