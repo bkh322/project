@@ -221,17 +221,29 @@
             $("header .logo a").css("color","#fff"); 
             } 
 
-            $('.menuList').each( function(i){
+            
+            $('.menuList ul').each( function(index){
+     
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+           
+            if( bottom_of_window > bottom_of_object/1.5  ){
+                for(var i = 0; i < 4; i++){
+                index++;
+                var duration =  `${index * 0.5 + 0.5}s` ;
+                $(this).children().eq(`${index - 1 }`).css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': duration });
+                console.log(index);
+                if(index > 5){
+                    break;
+                    }
+                } 
+            }else{
+                $(this).children().css({'transform' : ' translateY(0)', 'opacity' : '0', 'transition-duration': '0' });
 
-            if( bottom_of_window > bottom_of_object/2  ){
-                $('.menuList li:nth-child(1)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '.5s'});
-                $('.menuList li:nth-child(2)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '1s'});
-                $('.menuList li:nth-child(3)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '1.5s'});
-                $('.menuList li:nth-child(4)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '2s'});
-                $('.menuList li:nth-child(5)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '2.5s'});
             }
+                
+            
         });             
             $('.notic').each( function(v){
                 var bottom_of_object = $(this).offset().top + $(this).outerHeight();
