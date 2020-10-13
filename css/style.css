@@ -24,6 +24,8 @@ header .leng li:last-child{margin-left:20px; padding-left:20px;}
 .board ul li:first-child{padding:10px 50px 10px 0;}
 .board ul li:last-child{border-right:none;}
 .mainTit{font-size: 18px;    margin-bottom: 22px;    color: #191c21;}
+.board a{display:block;}
+.board a:hover h4.tit{text-decoration:underline;}
 .board .tit{display: -webkit-box;    max-height: 44px;    -webkit-line-clamp: 2;    -webkit-box-orient: vertical;    font-size: 16px;    line-height: 22px;    color: #191c21;    overflow: hidden;    word-break: keep-all;    text-overflow: ellipsis;    white-space: normal;}
 .board .date{    margin: 14px auto 24px 0;    font-size: 12px;    color: #939393;}
 .board .dec{display: block; height: 18px;    font-size: 14px;    line-height: 18px;    white-space: nowrap;    overflow: hidden;    word-break: break-word;    text-overflow: ellipsis;    color: #6a6a6a;}
