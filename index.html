@@ -202,7 +202,8 @@
       },
       pagination: {
         el: '.swiper-pagination',
-      },      
+      },     
+      slidesPerView: 'auto', 
     });
     $(document).ready(function(){ 
         $(window).scroll(function(){ 
@@ -220,14 +221,28 @@
             $("header .logo a").css("color","#fff"); 
             } 
 
-            $('.menuList li').each( function(i){
+            $('.menuList').each( function(i){
             var bottom_of_object = $(this).offset().top + $(this).outerHeight();
             var bottom_of_window = $(window).scrollTop() + $(window).height();
-            /* 3 */
-            if( bottom_of_window > bottom_of_object/2 ){
-                $(this).animate({'opacity':'1'},500);
+
+            if( bottom_of_window > bottom_of_object/2  ){
+                $('.menuList li:nth-child(1)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '.5s'});
+                $('.menuList li:nth-child(2)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '1s'});
+                $('.menuList li:nth-child(3)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '1.5s'});
+                $('.menuList li:nth-child(4)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '2s'});
+                $('.menuList li:nth-child(5)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '2.5s'});
             }
-           
+        });             
+            $('.notic').each( function(v){
+                var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+                var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            if( bottom_of_window > bottom_of_object/1 ){
+                $('.notic li:nth-child(1)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '.5s'});
+                $('.notic li:nth-child(2)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '1s'});
+                $('.notic li:nth-child(3)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '1.5s'});
+                $('.notic li:nth-child(4)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '2s'});
+            }
         });             
         }) 
         })
