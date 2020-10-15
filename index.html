@@ -249,6 +249,7 @@
              $('.notic .swiper-wrapper>div').attr('data-aos', 'fade-up');                   
          }
       $( window ).resize( function() {
+          console.log($( window ).width());
         if($( window ).width() > 320 && $( window ).width() < 1024){
                 var noticSwiper = new Swiper('.swiper-container.noticSwiper', { 
                         slidesPerView: 2,
@@ -273,7 +274,6 @@
                 $('.notic .swiper-wrapper>div').removeAttr('data-aos');
                 $('.noticSwiper .swiper-slide').css('transform', 'translate3d(0px, 0px, 0px);');
          }else{
-             noticSwiper.destroy();
              $('.menuList li').attr('data-aos', 'fade-up');                   
              $('.notic .swiper-wrapper>div').attr('data-aos', 'fade-up');                   
          }
