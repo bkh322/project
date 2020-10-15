@@ -5,9 +5,12 @@
 <title>포트폴리오</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/aos.css" rel="stylesheet" type="text/css" />
+<!--<link href="js/font-awesome/css/all.min.css" rel="stylesheet" />-->
 <link href="css/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/aos.js"></script>
 
 </head>
     <body class="main">
@@ -36,15 +39,18 @@
                     <a href="#">메뉴06</a>
                 </li>
             </ul>
-            <ul class="leng">
-                <li><a href="#" class="chk">KOR</a></li>
-                <li><a href="#">ENG</a></li>
-            </ul>
+            <div class="leng">
+                <button type="button" class="lengBtn"><i class="fas fa-align-justify"></i></button>
+                <ul>
+                    <li><a href="#" class="chk">KOR</a></li>
+                    <li><a href="#">ENG</a></li>
+                </ul>
+            </div>
             </div>
         </header>
         <section class="bannerWrap">
             <!-- Swiper -->
-            <div class="swiper-container">
+            <div class="swiper-container banner">
                 <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <img src="images/main01.jpg" alt="메인배너01" />
@@ -93,15 +99,15 @@
         </section>
         <section class="menuList container">
             <ul>
-                <li><a href="#">
+                <li data-aos="fade-up" data-aos-delay="50"><a href="#">
                     <img src="images/menu01.png" alt="menu01이미지"/>
                         <div class="txtWrap">
                             <p class="tit">메뉴01</p>
-                            <p class="hover">메뉴01 설명설명<br/>설명설명</p>
+                            <p class="hover">메뉴01 설명설명</p>
                         </div>
                     </a>
                 </li>
-                <li><a href="#">
+                <li data-aos="fade-up" data-aos-delay="100"><a href="#">
                     <img src="images/menu02.png" alt="menu02이미지"/>
                         <div class="txtWrap">
                             <p class="tit">메뉴02</p>
@@ -109,7 +115,7 @@
                         </div>
                     </a>
                 </li>
-                <li><a href="#">
+                <li data-aos="fade-up" data-aos-delay="150"><a href="#">
                     <img src="images/menu03.png" alt="menu03이미지"/>
                         <div class="txtWrap">
                             <p class="tit">메뉴03</p>
@@ -117,7 +123,7 @@
                         </div>
                     </a>
                 </li>
-                <li><a href="#">
+                <li data-aos="fade-up" data-aos-delay="200"><a href="#">
                     <img src="images/menu04.png" alt="menu04이미지"/>
                         <div class="txtWrap">
                             <p class="tit">메뉴04</p>
@@ -125,7 +131,7 @@
                         </div>
                     </a>
                 </li>
-                <li><a href="#">
+                <li data-aos="fade-up" data-aos-delay="250"><a href="#">
                     <img src="images/menu05.png" alt="menu05이미지"/>
                         <div class="txtWrap">
                             <p class="tit">메뉴05</p>
@@ -136,128 +142,152 @@
             </ul>
         </section>
         <section class="notic container">
-            <ul>
-                <li>
-                    <a href="#">
-                        <div class="img">
-                            <img src="images/list01.jpg" alt="소식">
-                        </div>
-                        <p class="tit">
-                            우리가게소식
-                        </p>
-                        <p class="dec">
-                            소식소식우리가게소식소식
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="img">
-                            <img src="images/list02.jpg" alt="소식">
-                        </div>
-                        <p class="tit">
-                            우리가게소식
-                        </p>
-                        <p class="dec">
-                            소식소식우리가게
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="img">
-                            <img src="images/list03.jpg" alt="소식">
-                        </div>
-                        <p class="tit">
-                            우리가게소식
-                        </p>
-                        <p class="dec">
-                            소식소식우리가게소식소식소식우리가게소식
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="img">
-                            <img src="images/list04.jpg" alt="소식">
-                        </div>
-                        <p class="tit">
-                            우리가게소식
-                        </p>
-                        <p class="dec">
-                            소식소식우리가게소식소식소식우리가게소식
-                        </p>
-                    </a>
-                </li>
-            </ul>
+            <div class="swiper-container noticSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" data-aos="fade-up"  data-aos-delay="50">
+                        <a href="#">
+                            <div class="img">
+                                <img src="images/list01.jpg" alt="소식">
+                            </div>
+                            <p class="tit">
+                                우리가게소식
+                            </p>
+                            <p class="dec">
+                                소식소식우리가게소식소식
+                            </p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="100">
+                        <a href="#">
+                            <div class="img">
+                                <img src="images/list02.jpg" alt="소식">
+                            </div>
+                            <p class="tit">
+                                우리가게소식
+                            </p>
+                            <p class="dec">
+                                소식소식우리가게소식소식
+                            </p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="150">
+                        <a href="#">
+                            <div class="img">
+                                <img src="images/list03.jpg" alt="소식">
+                            </div>
+                            <p class="tit">
+                                우리가게소식
+                            </p>
+                            <p class="dec">
+                                소식소식우리가게소식소식
+                            </p>
+                        </a>
+                    </div>
+                    <div class="swiper-slide" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#">
+                            <div class="img">
+                                <img src="images/list04.jpg" alt="소식">
+                            </div>
+                            <p class="tit">
+                                우리가게소식
+                            </p>
+                            <p class="dec">
+                                소식소식우리가게소식소식
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+            </div>
         </section>
 
 
     <script src="js/swiper-bundle.min.js"></script>        
-    <script>
-    var swiper = new Swiper('.swiper-container', {
+<script>
+    var swiper = new Swiper('.swiper-container.banner', {
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
       pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-container.banner .swiper-pagination',
       },     
-      slidesPerView: 'auto', 
+      slidesPerView: 'auto',    
     });
+    AOS.init({
+				easing: 'ease-out-back',
+				duration: 1000,
+            });
+            
     $(document).ready(function(){ 
+        if($( window ).width() > 320 && $( window ).width() < 1024){
+                var noticSwiper = new Swiper('.swiper-container.noticSwiper', { 
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                        slidesPerGroup: 2,
+                        loopFillGroupWithBlank: true,
+                        pagination: {
+                            el: '.noticSwiper .swiper-pagination',
+                        }, 
+                        simulateTouch : true,
+                        breakpoints: {
+                            1024: {
+                                slidesPerView: 4,
+                                spaceBetween: 15,
+                                slidesPerGroup: 4,
+                                loopFillGroupWithBlank: true
+                                },
+                        }
+
+                }); 
+                $('.menuList li').removeAttr('data-aos');
+                $('.notic .swiper-wrapper>div').removeAttr('data-aos');
+            
+         }else{
+             $('.menuList li').attr('data-aos', 'fade-up');                   
+             $('.notic .swiper-wrapper>div').attr('data-aos', 'fade-up');                   
+         }
+      $( window ).resize( function() {
+        if($( window ).width() > 320 && $( window ).width() < 1024){
+                var noticSwiper = new Swiper('.swiper-container.noticSwiper', { 
+                        slidesPerView: 2,
+                        spaceBetween: 15,
+                        slidesPerGroup: 2,
+                        loopFillGroupWithBlank: true,
+                        pagination: {
+                            el: '.noticSwiper .swiper-pagination',
+                        }, 
+                        simulateTouch : true,
+                        breakpoints: {
+                            1024: {
+                                slidesPerView: 4,
+                                spaceBetween: 15,
+                                slidesPerGroup: 4,
+                                loopFillGroupWithBlank: true
+                                },
+                        }
+
+                }); 
+                $('.menuList li').removeAttr('data-aos');
+                $('.notic .swiper-wrapper>div').removeAttr('data-aos');
+                $('.noticSwiper .swiper-slide').css('transform', 'translate3d(0px, 0px, 0px);');
+         }else{
+             noticSwiper.destroy();
+             $('.menuList li').attr('data-aos', 'fade-up');                   
+             $('.notic .swiper-wrapper>div').attr('data-aos', 'fade-up');                   
+         }
+      });
         $(window).scroll(function(){ 
             var scroll = $(window).scrollTop(); 
             if(scroll>1){ 
-            $("header").css("background","#fff"); 
-            $("header .menuWrap a").css("color","#303030"); 
-            $("header .leng li a.chk").css("color","#303030"); 
-            $("header .logo a").css("color","#303030"); 
+            $("header").addClass("action");
             } 
             else{ 
-            $("header").css("background","none"); 
-            $("header .menuWrap a").css("color","#fff"); 
-            $("header .leng li a.chk").css("color","#fff"); 
-            $("header .logo a").css("color","#fff"); 
+            $("header").removeClass("action");
             } 
-
-            
-            $('.menuList ul').each( function(index){
-     
-            var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-            var bottom_of_window = $(window).scrollTop() + $(window).height();
-            
-           
-            if( bottom_of_window > bottom_of_object/1.5  ){
-                for(var i = 0; i < 4; i++){
-                index++;
-                var duration =  `${index * 0.5 + 0.5}s` ;
-                $(this).children().eq(`${index - 1 }`).css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': duration });
-                console.log(index);
-                if(index > 5){
-                    break;
-                    }
-                } 
-            }else{
-                $(this).children().css({'transform' : ' translateY(0)', 'opacity' : '0', 'transition-duration': '0' });
-
-            }
-                
-            
-        });             
-            $('.notic').each( function(v){
-                var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-                var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-            if( bottom_of_window > bottom_of_object/1.5 ){
-                $('.notic li:nth-child(1)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '.5s'});
-                $('.notic li:nth-child(2)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '1s'});
-                $('.notic li:nth-child(3)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '1.5s'});
-                $('.notic li:nth-child(4)').css({'transform' : ' translateY(-30px)', 'opacity' : '1', 'transition-duration': '2s'});
-            }
-        });             
-        }) 
-        })
+    });  
+})
       </script>
     </body>
 </html>
