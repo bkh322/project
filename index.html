@@ -235,7 +235,7 @@
             </div>
         </section>
         <footer>
-            <div class="footerNav">
+            <div class="footerNav container">
                 <ul>
                     <li class="menu01">
                         <a href="#">메뉴01</a>
@@ -247,30 +247,39 @@
                         </ul>
                     </li>
                     <li class="menu01">
-                        <a href="#">메뉴01</a>
+                        <a href="#">메뉴02
+                            <ul>
+                                <li class="menu02"><a href="#">메뉴02-01</a></li>
+                                <li class="menu02"><a href="#">메뉴02-02</a></li>
+                                <li class="menu02"><a href="#">메뉴02-03</a></li>
+                            </ul>                            
+                        </a>
                     </li>
                     <li class="menu01">
-                        <a href="#">메뉴01</a>
+                        <a href="#">메뉴03</a>
                     </li>
                     <li class="menu01">
-                        <a href="#">메뉴01</a>
+                        <a href="#">메뉴04</a>
                     </li>
                     <li class="menu01">
-                        <a href="#">메뉴01</a>
+                        <a href="#">메뉴05</a>
                     </li>
                     <li class="menu01">
-                        <a href="#">메뉴01</a>
+                        <a href="#">메뉴06</a>
                     </li>
                     <li class="menu01">
-                        <a href="#">메뉴01</a>
+                        <a href="#">개인정보처리방침</a>
                     </li>
                     <li class="menu01">
-                        <a href="#">메뉴01</a>
+                        <a href="#">고객센터</a>
                     </li>
                     <li class="menu01">
-                        <a href="#">메뉴01</a>
+                        <a href="#">광고/제휴문의 <i class="fas fa-external-link-alt"></i></a>
                     </li>
                 </ul>
+            </div>
+            <div class="capyright">
+                <p class="container">Copyright © gaehwa Corp. All Rights Reserved</p>
             </div>
         </footer>
 
@@ -356,24 +365,29 @@
 
         menuHover();
 
+        function scrollSet(){
+            $("header").addClass("action");
+            $(".inner").addClass("scroll");
+            menuHover();             
+        }
+        scrollSet();
 
-  
-
-        $(window).scroll(function(){ 
+        function windowScroll(){
             const scroll = $(window).scrollTop(); 
-            console.log(scroll)
+        
             if(scroll>1){ 
-                $("header").addClass("action");
-                $(".inner").addClass("scroll");
-                menuHover(); 
-
+                scrollSet();
             } 
             else{ 
             $("header").removeClass("action"); 
             $(".inner").removeClass('scroll');   
-            menuHover();
-             
-            }
+
+            menuHover(); 
+        }
+    }
+
+        $(window).scroll(function(){ 
+            windowScroll();
         });
     
       </script>
