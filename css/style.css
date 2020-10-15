@@ -1,11 +1,11 @@
 body{position: relative; overflow-x: hidden; margin-bottom:300px;}
 .main section{margin-bottom:100px;}
-header{position: fixed; z-index:999; left:0; top:0; width:100%;}
+header{position: fixed; z-index:999; left:0; top:0; width:100%;  }
 header .container{display:flex; justify-content: space-around; height:70px; align-items: center;}
 header .container>ul{display:flex;}
 header .container>div{display:flex;}
 header .container .logo a{color:#fff;}
-header .menuWrap>li a{color:#fff; font-size:16px; padding:0 50px; font-weight:bold;}
+header .menuWrap>li.menu01>a{color:#fff; font-size:16px; padding:0 50px; font-weight:bold;}
 header .leng button{display:none;}
 header .leng li a{font-size:14px;  color:#999;}
 header .leng li a.chk{color:#fff;}
@@ -14,9 +14,10 @@ header .leng li:last-child:after{content: '';    position: absolute;    left: 0;
 header .leng li:last-child{margin-left:20px; padding-left:20px;}
 header .leng ul{display:flex;}
 header.action {background:#fff;}
-header.action .menuWrap a{color:#303030;}
+header.action .menuWrap>li.menu01>a{color:#303030;}
 header.action .leng li a.chk{color:#303030;}
 header.action .logo a{color:#303030;}
+header .menu01 .submenuWrap{position: absolute; left :0; top:70px; width:100%; background:white;}
 .bannerWrap{height: 760px; margin-bottom:30px;}
 .swiper-slide{position: relative; }
 .swiper-slide img{width:100%;}
@@ -69,6 +70,11 @@ header.action .logo a{color:#303030;}
     }
   }
 
+  @media screen and (max-width: 1280px){
+    .notic.container .swiper-wrapper{padding-bottom:50px;}
+    .notic.container .swiper-pagination{bottom:0px;}
+    .notic.container .swiper-pagination-bullet{background:#000;}
+  }
   @media screen and (max-width: 1024px){
     .container{width:100% !important;}
     .main .bannerWrap{height: 65vw; margin:0;}
@@ -104,5 +110,6 @@ header.action .logo a{color:#303030;}
    .menuList ul li p.tit{margin-bottom:20px; font-size: 1.625rem;}
    .notic.container{padding: 0 15px;    box-sizing: border-box;}
    .notic.container .swiper-wrapper{padding-bottom:50px;}
-  .notic.container .swiper-pagination{bottom:0px;}
+    .notic.container .swiper-pagination{bottom:0px;}
+
   }

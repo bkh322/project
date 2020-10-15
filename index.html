@@ -6,7 +6,7 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link href="css/common.css" rel="stylesheet" type="text/css" />
 <link href="css/aos.css" rel="stylesheet" type="text/css" />
-<!--<link href="js/font-awesome/css/all.min.css" rel="stylesheet" />-->
+<script src="https://kit.fontawesome.com/5d9c1c663d.js" crossorigin="anonymous"></script>
 <link href="css/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -22,6 +22,13 @@
             <ul class="menuWrap">
                 <li class="menu menu01">
                     <a href="#">메뉴01</a>
+                    <div class="submenuWrap">
+                        <ul class="menuWrap02 container">
+                            <li class="menu menu02">
+                                <a href="#">메뉴02</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 <li class="menu menu01">
                     <a href="#">메뉴02</a>
@@ -40,7 +47,7 @@
                 </li>
             </ul>
             <div class="leng">
-                <button type="button" class="lengBtn"><i class="fas fa-align-justify"></i></button>
+                <button type="button" class="lengBtn"><i class="fas fa-globe"></i></button>
                 <ul>
                     <li><a href="#" class="chk">KOR</a></li>
                     <li><a href="#">ENG</a></li>
@@ -236,50 +243,70 @@
                               },
                       }
               });     
-
         const menuList = $('.menuList li');
         const noticList = $('.notic .swiper-wrapper>div');
 
-        function windowResize(){
-            if($( window ).width() < 1024){
-                const noticSwiper = new Swiper('.swiper-container.noticSwiper', { 
-                      slidesPerView: 2,
-                      spaceBetween: 15,
-                      slidesPerGroup: 2,
-                      loopFillGroupWithBlank: true,
-                      pagination: {
-                          el: '.noticSwiper .swiper-pagination',
-                      }, 
-                      simulateTouch : true,
-                      breakpoints: {
-                          1024: {
-                              slidesPerView: 4,
-                              spaceBetween: 15,
-                              },
-                      }
-              });    
+        function windowResize() {
+        const noticSwiper = new Swiper(".swiper-container.noticSwiper", {
+          slidesPerView: 2,
+          spaceBetween: 15,
+          slidesPerGroup: 2,
+          loopFillGroupWithBlank: true,
+          pagination: {
+            el: ".noticSwiper .swiper-pagination",
+          },
+          simulateTouch: true,
+          breakpoints: {
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 15,
+            },
+            1280: {
+              slidesPerView: 4,
+              spaceBetween: 15,
+            },
+          },
+        });
 
-            menuList.removeAttr('data-aos');
-            noticList.removeAttr('data-aos');
-             }else{         
-                noticSwiper.destroy() ;
-                menuList.attr('data-aos', 'fade-up');                   
-                noticList.attr('data-aos', 'fade-up');    
-                console.log($( window ).width());               
-             }
-         }
+        if ($(window).width() < 1280) {
+          noticSwiper.init();
+          menuList.removeAttr("data-aos");
+          noticList.removeAttr("data-aos");
+        } else {
+          noticSwiper.destroy();
+          menuList.attr("data-aos", "fade-up");
+          noticList.attr("data-aos", "fade-up");
+          console.log($(window).width());
+        }
+      }
          windowResize();
          $( window ).resize(windowResize);         
+     
+         function menuHover(){
+            $("header").hover(function(){
+                $("header").addClass("action"); 
+            },function(){
+                $("header").removeClass("action"); 
+            })
+        }
+
+        menuHover();
 
         $(window).scroll(function(){ 
             const scroll = $(window).scrollTop(); 
+            console.log(scroll)
             if(scroll>1){ 
-            $("header").addClass("action");
+                $("header").addClass("action");
+                $("header").hover(function(){
+                $("header").addClass("action"); 
+                    });
             } 
             else{ 
             $("header").removeClass("action");
-            } 
-    });  
+            menuHover();          
+            }
+        });
+    
       </script>
     </body>
 </html>
