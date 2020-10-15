@@ -15,6 +15,7 @@
 </head>
     <body class="main">
         <header>
+            <div class="inner">
             <div class="container">
             <h1 class="logo">
                 <a href="#">logo</a>
@@ -22,19 +23,42 @@
             <ul class="menuWrap">
                 <li class="menu menu01">
                     <a href="#">메뉴01</a>
-                    <div class="submenuWrap">
                         <ul class="menuWrap02 container">
                             <li class="menu menu02">
-                                <a href="#">메뉴02</a>
+                                <a href="#">메뉴01-01</a>
+                            </li>
+                            <li class="menu menu02">
+                                <a href="#">메뉴01-02</a>
                             </li>
                         </ul>
-                    </div>
                 </li>
                 <li class="menu menu01">
                     <a href="#">메뉴02</a>
+                        <ul class="menuWrap02 container">
+                            <li class="menu menu02">
+                                <a href="#">메뉴02-01</a>
+                            </li>
+                            <li class="menu menu02">
+                                <a href="#">메뉴02-02</a>
+                            </li>
+                        </ul>            
                 </li>
                 <li class="menu menu01">
                     <a href="#">메뉴03</a>
+                    <ul class="menuWrap02 container">
+                        <li class="menu menu02">
+                            <a href="#">메뉴03-01</a>
+                        </li>
+                        <li class="menu menu02">
+                            <a href="#">메뉴03-02</a>
+                        </li>
+                        <li class="menu menu02">
+                            <a href="#">메뉴03-04</a>
+                        </li>
+                        <li class="menu menu02">
+                            <a href="#">메뉴03-05</a>
+                        </li>
+                    </ul>                        
                 </li>
                 <li class="menu menu01">
                     <a href="#">메뉴04</a>
@@ -53,6 +77,8 @@
                     <li><a href="#">ENG</a></li>
                 </ul>
             </div>
+            </div>
+            
             </div>
         </header>
         <section class="bannerWrap">
@@ -208,7 +234,45 @@
                     <div class="swiper-pagination"></div>
             </div>
         </section>
-
+        <footer>
+            <div class="footerNav">
+                <ul>
+                    <li class="menu01">
+                        <a href="#">메뉴01</a>
+                        <ul>
+                            <li class="menu02"><a href="#">메뉴01-01</a></li>
+                            <li class="menu02"><a href="#">메뉴01-02</a></li>
+                            <li class="menu02"><a href="#">메뉴01-03</a></li>
+                            <li class="menu02"><a href="#">메뉴01-04</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu01">
+                        <a href="#">메뉴01</a>
+                    </li>
+                    <li class="menu01">
+                        <a href="#">메뉴01</a>
+                    </li>
+                    <li class="menu01">
+                        <a href="#">메뉴01</a>
+                    </li>
+                    <li class="menu01">
+                        <a href="#">메뉴01</a>
+                    </li>
+                    <li class="menu01">
+                        <a href="#">메뉴01</a>
+                    </li>
+                    <li class="menu01">
+                        <a href="#">메뉴01</a>
+                    </li>
+                    <li class="menu01">
+                        <a href="#">메뉴01</a>
+                    </li>
+                    <li class="menu01">
+                        <a href="#">메뉴01</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
 
     <script src="js/swiper-bundle.min.js"></script>        
 <script>
@@ -284,26 +348,31 @@
      
          function menuHover(){
             $("header").hover(function(){
-                $("header").addClass("action"); 
+                $(".inner").addClass('hover'); 
             },function(){
-                $("header").removeClass("action"); 
+                $(".inner").removeClass('hover'); 
             })
         }
 
         menuHover();
+
+
+  
 
         $(window).scroll(function(){ 
             const scroll = $(window).scrollTop(); 
             console.log(scroll)
             if(scroll>1){ 
                 $("header").addClass("action");
-                $("header").hover(function(){
-                $("header").addClass("action"); 
-                    });
+                $(".inner").addClass("scroll");
+                menuHover(); 
+
             } 
             else{ 
-            $("header").removeClass("action");
-            menuHover();          
+            $("header").removeClass("action"); 
+            $(".inner").removeClass('scroll');   
+            menuHover();
+             
             }
         });
     
