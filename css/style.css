@@ -12,6 +12,7 @@ header .leng li a.chk{color:#fff;}
 header .leng li:last-child{position: relative;}
 header .leng li:last-child:after{content: '';    position: absolute;    left: 0;    top: 42%;    display: block;    width: 1px;    height: 6px;    background-color: #999;}
 header .leng li:last-child{margin-left:20px; padding-left:20px;}
+header .leng ul{display:flex;}
 header.action {background:#fff;}
 header.action .menuWrap a{color:#303030;}
 header.action .leng li a.chk{color:#303030;}
