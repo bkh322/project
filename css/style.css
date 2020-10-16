@@ -90,21 +90,50 @@ footer .menu01>a i{ margin-left:5px; color:#6a6a6a;}
     }
   }
 
+@keyframes rotate {
+    from {
+      transform: rotate( 0 ); 
+    }
+    to {
+      transform: rotate( 45deg ); 
+    }
+  }
+@keyframes rotateBack {
+    from {
+      transform: rotate( 45deg ); 
+    }
+    to {
+      transform: rotate( 0 ); 
+    }
+  }
+
   @media screen and (max-width: 1280px){
     .notic.container .swiper-wrapper{padding-bottom:50px;}
     .notic.container .swiper-pagination{bottom:0px;}
     .notic.container .swiper-pagination-bullet{background:#000;}
+    .footerNav{padding:0 30px;}
+    header.action button{color:#303030;}
+    header.action button i{color:#303030;}
+    .footerNav>ul>li{width:calc(100% - 60px); padding: 1.25rem 0; margin-bottom:0;}
+    .footerNav>ul>li a{font-size: 1.083rem; font-weight:bold;}
+    .footerNav>ul>li.menu01 ul{height:0; overflow:hidden;}
+    .footerNav>ul>li.menu01.action ul{height:auto;}
+    .footerNav>ul>li.menu01>a{cursor:pointer; pointer-events: none; }
+    .footerNav>ul>li.menu01{position: relative;}
+    .footerNav>ul>li.menu01.more:after{content:'\f067'; font-size:19px; position: absolute; right:10px; top:23px;   -webkit-font-smoothing: antialiased;      display: inline-block;      font-style: normal;      font-variant: normal;      text-rendering: auto;      line-height: 1; font-family: "Font Awesome 5 Free"; font-weight:900; animation-name : rotateBack; animation-duration: .5s;}
+    .footerNav>ul>li.menu01.more.action:after{animation-name : rotate; animation-duration: .5s;}
+
   }
   @media screen and (max-width: 1024px){
     .container{width:100% !important;}
     .main .bannerWrap{height: 65vw; margin:0;}
     .bannerWrap .swiper-pagination{bottom:20px;}
-    .bannerWrap .swiper-button-next,.bannerWrap .swiper-button-prev{display:none;}
     .main section {margin: 3.625rem auto 7.5rem auto;}
     .mainTit{padding-left:10px;}
     header .container .menuWrap{display:none;}
     header .container .leng ul{display:none;}
-    header .leng button{display:inline-block; background:none; border:none; color:#fff;}
+    header .m_menuBtn{background:none; border:none; color:#fff; font-size:22px;}
+    header .leng button{font-size:22px; display:inline-block; background:none; border:none; color:#fff;}
     .board .tit{font-size: 1.126rem; line-height: 1.92rem;}
     .board .date{margin: 1.58rem auto 2.58rem 0; font-size: 1rem;}
     .board .dec{height: 1.75rem; font-size: 1.08rem; line-height: 1.75rem;}
