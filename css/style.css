@@ -95,6 +95,7 @@ footer .menu01>a i{ margin-left:5px; color:#6a6a6a;}
     header .menuWrap>li.menu01>a{color: #303030; border-bottom:1px solid #ccc;   pointer-events: none; height: 4.08rem; font-size: 1.42rem; display: block; padding: 1.2rem 15px; box-sizing: border-box;}
     header .inner.action .logo a{color:#303030;}
     header .inner.action .menu01{position: relative;}
+    header .inner.action .menu.menu01.more.action>a{border-bottom:1px solid}
     .inner.action ul>li.menu01.more:after{transform: rotate( 0 );  transition-duration: .5s; color:#ccc; content:'\f078'; font-size:19px; position: absolute; right:10px; top:23px; font-family: "Font Awesome 5 Free"; font-weight:900; }
     .inner.action ul>li.menu01.more.action:after{transform: rotate( -180deg ); transition-duration: .5s; color:#303030;}
     .menu.menu01.more.action .menuWrap02{height:auto; position: relative; top:0;    padding: 0.8rem 0 0;}
