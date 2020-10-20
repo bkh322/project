@@ -302,46 +302,40 @@
             });
            
             const noticSwiper = new Swiper('.swiper-container.noticSwiper', { 
-                      slidesPerView: 2,
-                      spaceBetween: 15,
-                      slidesPerGroup: 2,
-                      loopFillGroupWithBlank: true,
+                            slidesPerView: 2,
+                            slidesPerGroup: 2,
+                            spaceBetween: 15,
+                            touchRatio: 1,
                       pagination: {
-                          el: '.noticSwiper .swiper-pagination',
+                          el: '.swiper-container.noticSwiper .swiper-pagination',
+                          clickable: true,
                       }, 
-                      simulateTouch : true,
                       breakpoints: {
-                          1024: {
-                              slidesPerView: 4,
-                              spaceBetween: 15,
-                              },
+                        320 : {
+                            slidesPerView: 2,
+                            slidesPerGroup: 2,
+                            spaceBetween: 15,
+                                },           
+                        760 : {
+                            slidesPerView: 2,
+                            slidesPerGroup: 2,
+                            spaceBetween: 15,
+                                },           
+                        1024 : {
+                        slidesPerView: 4,
+                        slidesPerGroup: 4,
+                        spaceBetween: 15,
+                        touchRatio: 0,
+                        },                                                
                       }
               });     
         const menuList = $('.menuList li');
         const noticList = $('.notic .swiper-wrapper>div');
 
         function windowResize() {
-        const noticSwiper = new Swiper(".swiper-container.noticSwiper", {
-          slidesPerView: 2,
-          spaceBetween: 15,
-          slidesPerGroup: 2,
-          loopFillGroupWithBlank: true,
-          pagination: {
-            el: ".noticSwiper .swiper-pagination",
-          },
-          simulateTouch: true,
-          breakpoints: {
-            1280: {
-              slidesPerView: 4,
-              spaceBetween: 15,
-            },
-          },
-        });
-
-       
 
 
-        if ($(window).width() < 1280) {         
+        if ($(window).width() < 1024) {         
           const footerMenu = $('.footerNav>ul>li.menu01');
           footerMenu.click(function(footerMenuClick){
            if($(this).hasClass('action') == true){
@@ -350,15 +344,14 @@
            $(this).addClass('action');
             }
           }); 
-          noticSwiper.init();
           menuList.removeAttr("data-aos");
           noticList.removeAttr("data-aos");
 
         } else {
-          noticSwiper.destroy();
           menuList.attr("data-aos", "fade-up");
           noticList.attr("data-aos", "fade-up");
         }
+
       }
          windowResize();
          $( window ).resize(windowResize);         

@@ -71,7 +71,7 @@ header .menu01 .menuWrap02 a{text-align:center; color: #969696; padding: 6px 0; 
 .notic p.dec{text-align:left; display: block; font-size: 18px;    line-height: 1.6rem;    max-height: 3.2rem;    color: #1e1e1e;    }
 .noticSwiper .swiper-slide a{width:100%;}
 .notic.container .swiper-wrapper{display:flex; justify-content: space-between;}
-.notic.container .swiper-slide{width:calc(100% / 4 - 15px);}
+.noticSwiper .swiper-slide{width:calc(100% / 4 - 15px);}
 footer{border-top:1px solid #e0e0e0; }
 .footerNav>ul{display:flex; flex-wrap:wrap; margin-top:80px;}
 .footerNav>ul>li{width:calc(100% / 6 - 10px); margin-bottom:80px;}
@@ -109,9 +109,10 @@ footer .menu01>a i{ margin-left:5px; color:#6a6a6a;}
   }
 
   @media screen and (max-width: 1280px){
+    .noticSwiper .swiper-slide{width:calc(100% / 2 - 15px);}
     .notic.container .swiper-wrapper{padding-bottom:50px;}
-    .notic.container .swiper-pagination{bottom:0px;}
-    .notic.container .swiper-pagination-bullet{background:#000;}
+    .notic.container .swiper-pagination{display:none;}
+    .notic.container .swiper-pagination-bullet-active{background:#000;}
     .footerNav{padding:0 30px;}
     header.action button{color:#303030;}
     header.action button i{color:#303030;}
@@ -160,6 +161,6 @@ footer .menu01>a i{ margin-left:5px; color:#6a6a6a;}
    .menuList ul li p.tit{margin-bottom:20px; font-size: 1.625rem;}
    .notic.container{padding: 0 15px;    box-sizing: border-box;}
    .notic.container .swiper-wrapper{padding-bottom:50px;}
-   .notic.container .swiper-pagination{bottom:0px;}
+   .notic.container .swiper-pagination{bottom:0px;  width: 100%; display:block;}
 
   }
