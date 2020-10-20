@@ -70,6 +70,7 @@ header .menu01 .menuWrap02 a{text-align:center; color: #969696; padding: 6px 0; 
 .notic p.dec{text-align:left; display: block; font-size: 18px;    line-height: 1.6rem;    max-height: 3.2rem;    color: #1e1e1e;    }
 .noticSwiper .swiper-slide a{width:100%;}
 .notic.container .swiper-wrapper{display:flex; justify-content: space-between;}
+.notic.container .swiper-pagination{display:none;}
 .noticSwiper .swiper-slide{width:calc(100% / 4 - 15px);}
 footer{border-top:1px solid #e0e0e0; }
 .footerNav>ul{display:flex; flex-wrap:wrap; margin-top:80px;}
