@@ -4,6 +4,7 @@ header{position: fixed; z-index:999; left:0; top:0; width:100%;  }
 header:after{content:''; border-bottom:1px solid #ccc; width:100%; height:1px; top:70px; position: absolute; display:none;}
 header:hover:after{display:block;}
 header .inner>.container{display:flex; justify-content: space-around; height:70px; align-items: center;}
+header .m_menuBtn{display:none;}
 header .container>ul{display:flex;}
 header .container>div{display:flex;}
 header .container .logo a{color:#fff;}
@@ -132,7 +133,7 @@ footer .menu01>a i{ margin-left:5px; color:#6a6a6a;}
     .mainTit{padding-left:10px;}
     header .container .menuWrap{display:none;}
     header .container .leng ul{display:none;}
-    header .m_menuBtn{background:none; border:none; color:#fff; font-size:22px;}
+    header .m_menuBtn{display:inline-block; background:none; border:none; color:#fff; font-size:22px;}
     header .leng button{font-size:22px; display:inline-block; background:none; border:none; color:#fff;}
     .board .tit{font-size: 1.126rem; line-height: 1.92rem;}
     .board .date{margin: 1.58rem auto 2.58rem 0; font-size: 1rem;}
