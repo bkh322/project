@@ -10,7 +10,7 @@ header .container>div{display:flex;}
 header .container .logo a{color:#fff;}
 header .menuWrap>li.menu01>a{color:#fff; font-size:16px; padding:0 50px; font-weight:bold;}
 header .leng button{display:none;}
-header .leng li a{font-size:14px;  color:#999;}
+header .leng li a{font-size:14px; white-space: nowrap; color:#999;}
 header .leng li a.chk{color:#fff;}
 header .leng li:last-child{position: relative;}
 header .leng li:last-child:after{content: '';    position: absolute;    left: 0;    top: 42%;    display: block;    width: 1px;    height: 6px;    background-color: #999;}
@@ -83,7 +83,7 @@ footer .menu01>a i{ margin-left:5px; color:#6a6a6a;}
   @media screen and (max-width: 1280px){
     header:hover:after {display:none;}
     header .container>ul{flex-wrap:wrap; position: absolute; top: 70px; width:95%;}
-    header .menu01{width:100%;}
+    header .menu01{width:95%;}
     header .inner.action{width:100%; height:100vh; background:#fff; transition-timing-function:ease; transition: height 0.8s, opacity 0.5s;}
     header .inner{height:70px; overflow:initial; transition-timing-function:ease; transition: height 0.8s, opacity 0.5s;}
     header .inner.action .m_menuBtn{color:#303030; margin-left:10px;}
@@ -117,18 +117,18 @@ footer .menu01>a i{ margin-left:5px; color:#6a6a6a;}
     .footerNav>ul>li.menu01.action ul{height:auto;}
     .footerNav>ul>li.menu01>a{cursor:pointer; pointer-events: none; }
     .footerNav>ul>li.menu01{position: relative;}
-    .footerNav>ul>li.menu01.more:after{content:'\f067'; font-size:19px; position: absolute; right:20px; top:23px;  font-family: "Font Awesome 5 Free"; font-weight:900; transform: rotate( 0 ); transition-duration: .5s;}
+    .footerNav>ul>li.menu01.more:after{content:'\f067'; font-size:19px; position: absolute; right:15px; top:23px;  font-family: "Font Awesome 5 Free"; font-weight:900; transform: rotate( 0 ); transition-duration: .5s;}
     .footerNav>ul>li.menu01.more.action:after{transform: rotate( 90deg ); transition-duration: .5s;}
 
   }
   @media screen and (max-width: 1024px){
-    .container{width:95% !important;}
+    .container{width:100%; padding:0 5%; box-sizing:border-box;}
     .main .bannerWrap{height: 65vw; margin:0;}
     .bannerWrap .swiper-pagination{bottom:20px;}
     .main section {margin: 3.625rem auto 7.5rem auto;}
     header .container .leng{position: relative;}
     header .container .leng ul{display:none;}
-    header .container .leng.action ul{padding:10px 0; border:1px solid #ccc; display:block; position: absolute; top: 34px; left: -19px; background:#fff;}
+    header .container .leng.action ul{padding:10px 0; border:1px solid #ccc; display:block; position: absolute; top: 34px; left: -13px; background:#fff;}
     header .leng li:last-child{margin:0; padding:5px 10px;}
     header .leng li{padding: 0 10px 5px 10px;}
     header .leng li:last-child:after{display:none;}
@@ -185,7 +185,7 @@ footer .menu01>a i{ margin-left:5px; color:#6a6a6a;}
     .board .swiper-pagination-bullet{margin:0 5px;}
     .board .swiper-pagination-bullet-active{background:#333;}
     .swiper-slide .text{bottom:90px; font-size:20px;}
-    .footerNav>ul{width:95%;}
+    .footerNav>ul{width:100%;}
     .footerNav>ul>li.menu01.more:after{font-size:12px;}
   }
   @media screen and (max-width: 320px){
