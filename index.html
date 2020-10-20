@@ -22,7 +22,7 @@
                 <a href="#">logo</a>
             </h1>
             <ul class="menuWrap">
-                <li class="menu menu01">
+                <li class="menu menu01 more">
                     <a href="#">메뉴01</a>
                         <ul class="menuWrap02 container">
                             <li class="menu menu02">
@@ -33,7 +33,7 @@
                             </li>
                         </ul>
                 </li>
-                <li class="menu menu01">
+                <li class="menu menu01 more">
                     <a href="#">메뉴02</a>
                         <ul class="menuWrap02 container">
                             <li class="menu menu02">
@@ -44,7 +44,7 @@
                             </li>
                         </ul>            
                 </li>
-                <li class="menu menu01">
+                <li class="menu menu01 more">
                     <a href="#">메뉴03</a>
                     <ul class="menuWrap02 container">
                         <li class="menu menu02">
@@ -109,27 +109,31 @@
         </section>
         <section class="board container">
             <h3 class="mainTit">NEWS</h3>
-            <ul>
-                <li> 
+            <div class="swiper-container board">
+                <div class="swiper-wrapper">
+                <div class="swiper-slide">
                     <a href="#"><h4 class="tit">공지사항 제목01</h4>
-                    <p class="date">2020.03.01</p>
-                    <p class="dec">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항</p>
-                </a>
-                </li>
-                <li><a href="#">
-                    <h4 class="tit">공지사항 제목01</h4>
-                    <p class="date">2020.03.01</p>
-                    <p class="dec">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항</p>
-                </a> 
-                </li>
-                <li> 
-                    <a href="#">
-                    <h4 class="tit">공지사항 제목01</h4>
-                    <p class="date">2020.03.01</p>
-                    <p class="dec">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항</p>
-                </a>
-                </li>
-            </ul>
+                        <p class="date">2020.03.01</p>
+                        <p class="dec">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항</p>
+                    </a>
+                    </div>
+                <div class="swiper-slide">
+                    <a href="#"><h4 class="tit">공지사항 제목01</h4>
+                        <p class="date">2020.03.01</p>
+                        <p class="dec">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항</p>
+                    </a>
+                    </div>
+                <div class="swiper-slide">
+                    <a href="#"><h4 class="tit">공지사항 제목01</h4>
+                        <p class="date">2020.03.01</p>
+                        <p class="dec">공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항내용공지사항</p>
+                    </a>
+                    </div>             
+                </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>                       
+                </div>
+            
         </section>
         <section class="menuList container">
             <ul>
@@ -312,9 +316,8 @@
                       }, 
                       breakpoints: {
                         320 : {
-                            slidesPerView: 2,
-                            slidesPerGroup: 2,
-                            spaceBetween: 15,
+                            slidesPerView: 1,
+                            slidesPerGroup: 1,
                                 },           
                         760 : {
                             slidesPerView: 2,
@@ -329,21 +332,41 @@
                         },                                                
                       }
               });     
+            const boardSwiper = new Swiper('.swiper-container.board', { 
+                            slidesPerView: 3,
+                            slidesPerGroup: 3,
+                            spaceBetween: 50,
+                            touchRatio: 1,
+                      pagination: {
+                          el: '.swiper-container.board .swiper-pagination',
+                          clickable: true,
+                      }, 
+                      breakpoints: {
+                        320 : {
+                            slidesPerView: 1,
+                            slidesPerGroup: 1,
+                            touchRatio: 1,
+                                },           
+                        760 : {
+                            slidesPerView: 3,
+                            slidesPerGroup: 3,
+                            touchRatio: 0,
+                                },           
+                        1024 : {
+                        slidesPerView: 3,
+                        slidesPerGroup: 3,
+                        spaceBetween: 15,
+                        touchRatio: 0,
+                        },                                                
+                      }
+              });     
         const menuList = $('.menuList li');
         const noticList = $('.notic .swiper-wrapper>div');
 
         function windowResize() {
 
 
-        if ($(window).width() < 1024) {         
-          const footerMenu = $('.footerNav>ul>li.menu01');
-          footerMenu.click(function(footerMenuClick){
-           if($(this).hasClass('action') == true){
-            $(this).removeClass('action');
-           }else{
-           $(this).addClass('action');
-            }
-          }); 
+        if ($(window).width() < 1080) {         
           menuList.removeAttr("data-aos");
           noticList.removeAttr("data-aos");
 
@@ -354,17 +377,31 @@
 
       }
          windowResize();
+         const footerMenu = $('.footerNav>ul>li.menu01');
+          footerMenu.click(function(footerMenuClick){
+              console.log($(this));
+           if($(this).hasClass('action') == true){
+            $(this).removeClass('action');
+           }else{
+           $(this).addClass('action');
+            }
+          }); 
          $( window ).resize(windowResize);         
      
          function menuHover(){
             $("header").hover(function(){
                 $(".inner").addClass('hover'); 
+                if ($(window).width() < 1024) {  
+                $(".inner").removeClass('hover'); 
+            } 
             },function(){
                 $(".inner").removeClass('hover'); 
             })
+
         }
 
         menuHover();
+
 
         function scrollSet(){
             $("header").addClass("action");
@@ -396,6 +433,39 @@
             windowScroll();
         });
     
+        $('.m_menuBtn').click(function(){
+            if($(this).children('i').hasClass('fas fa-bars') == true){
+                $(this).children('i').removeClass('fas fa-bars');
+                $(this).children('i').addClass('fas fa-times');
+            }else{
+                $(this).children('i').removeClass('fas fa-times');
+                $(this).children('i').addClass('fas fa-bars');
+            };
+            if($('.inner').hasClass('action') !== true){
+            $(this).parents('.inner').addClass('action');
+            }else{
+                $(this).parents('.inner').removeClass('action');
+            };
+         });
+
+        $('header .menu01.more').click(function()
+        {
+            if($(this).hasClass('action') == true){
+                $(this).removeClass('action');
+            }else{
+                $(this).addClass('action');
+            }
+
+        });
+
+        $('.lengBtn').click(function(){
+                if($(this).parent('.leng').hasClass('action') == true){
+                $(this).parent('.leng').removeClass('action');
+            }else{
+                $(this).parent('.leng').addClass('action');
+            }                
+        });
+        
       </script>
     </body>
 </html>

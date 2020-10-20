@@ -39,5 +39,5 @@ button{	cursor: pointer; color:#555;}
 .img-center{margin:0 auto; display:block;}
 
 @media screen and (max-width: 768px) {
-	.container{width:95%; margin:0 auto;}
+	.container{width:95% !important; margin:0 auto;}
 	}
